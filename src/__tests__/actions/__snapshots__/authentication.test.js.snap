@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication Actions should login and get user data 1`] = `
+Object {
+  "access_token": "token",
+  "email": "email",
+  "name": "name",
+  "type": "LOGIN_SUCCESS",
+}
+`;
+
+exports[`Authentication Actions should register and get user data 1`] = `
+Object {
+  "access_token": "token",
+  "email": "email",
+  "name": "name",
+  "type": "REGISTER_SUCCESS",
+}
+`;
+
+exports[`Authentication Actions should unauthenticate 1`] = `
+Object {
+  "type": "NOT_AUTHED",
+}
+`;
+
+exports[`Authentication Actions should update user data 1`] = `
+Object {
+  "email": "email",
+  "name": "name",
+  "type": "UPDATE",
+}
+`;

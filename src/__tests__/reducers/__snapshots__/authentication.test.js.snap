@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication reducer should back to initial state 1`] = `
+Object {
+  "email": "",
+  "name": "",
+  "token": "",
+}
+`;
+
+exports[`Authentication reducer should set login data 1`] = `
+Object {
+  "email": "email",
+  "name": "name",
+  "token": "token",
+}
+`;
+
+exports[`Authentication reducer should set register data 1`] = `
+Object {
+  "email": "email",
+  "name": "name",
+  "token": "token",
+}
+`;
+
+exports[`Authentication reducer should set updated data 1`] = `
+Object {
+  "email": "email",
+  "name": "name",
+  "token": "",
+}
+`;
+
+exports[`Authentication reducer should setup default state 1`] = `
+Object {
+  "email": "",
+  "name": "",
+  "token": "",
+}
+`;

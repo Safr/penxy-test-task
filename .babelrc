@@ -1,0 +1,53 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": "last 2 versions"
+      },
+      "loose": true,
+      "modules": false,
+      "useBuiltIns": true
+    }],
+    "react"
+  ],
+  "retainLines": true,
+  "env": {
+    "test": {
+      "presets":[
+         "env",
+         "react"],
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "production": {
+      "presets": ["react-optimize"],
+      "plugins": [
+        ["transform-imports", {
+          "react-router": {
+            "transform": "react-router/${member}", "preventFullImport": true
+          }
+        }],
+        "transform-react-constant-elements",
+        "transform-react-inline-elements",
+        "transform-react-pure-class-to-function",
+        ["transform-react-remove-prop-types", { "removeImport": true }]
+      ]
+    }
+  },
+  "plugins": [
+    "dynamic-import-webpack",
+    "styled-components",
+    "syntax-dynamic-import",
+    "transform-react-jsx-source",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread"
+  ]
+}
