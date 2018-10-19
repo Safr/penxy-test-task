@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, LOGIN_SUCCESS, NOT_AUTHED, UPDATE } from '../actionTypes';
+import { REGISTER_SUCCESS, LOGIN_SUCCESS, NOT_AUTHED, UPDATE_REQUEST, UPDATE_SUCCESS } from '../actionTypes';
 
 const initialState = {
   name: '',
@@ -16,11 +16,18 @@ export default function register(state = initialState, action) {
       email: action.email,
       token: action.access_token,
     };
-  case UPDATE:
+  case UPDATE_REQUEST:
     return {
       ...state,
       name: action.name,
       email: action.email,
+    };
+    case UPDATE_SUCCESS:
+    return {
+      ...state,
+      name: action.name,
+      email: action.email,
+      token: action.token,
     };
   case NOT_AUTHED:
     return initialState;

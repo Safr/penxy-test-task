@@ -23,7 +23,7 @@ class AccountPage extends Component {
   }
 
   render() {
-    const { name, email } = this.props;
+    const { name, email, password } = this.props;
     return (
       <React.Fragment>
         <HeaderWrapper>
@@ -38,7 +38,7 @@ class AccountPage extends Component {
           </Container>
         </HeaderWrapper>
         <Container>
-          <AccountForm goBack={this.handleUpdate} name={name} email={email} />
+          <AccountForm goBack={this.handleUpdate} email={email} password={password} />
         </Container>
       </React.Fragment>
     );
@@ -47,10 +47,12 @@ class AccountPage extends Component {
 AccountPage.defaultProps = {
   name: '',
   email: '',
+  password: '',
 };
 
 AccountPage.propTypes = {
   name: PropTypes.string,
+  password: PropTypes.string,
   email: PropTypes.string,
   logout: PropTypes.func.isRequired,
   history: PropTypes.shape({
@@ -61,6 +63,7 @@ AccountPage.propTypes = {
 const mapStateToProps = ({ auth }) => ({
   name: auth.name,
   email: auth.email,
+  password: auth.password,
 });
 
 

@@ -5,4 +5,5 @@ export const REGISTER_REQUEST = 'REGISTER_REQUEST';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const NOT_AUTHED = 'NOT_AUTHED';
 export const LOGOUT = 'LOGOUT';
-export const UPDATE = 'UPDATE';
+export const UPDATE_REQUEST = 'UPDATE_REQUEST';
+export const UPDATE_SUCCESS = 'UPDATE_SUCCESS';

@@ -23,13 +23,13 @@ class AccountForm extends Component {
   }
 
   render() {
-    const { name, email } = this.props;
+    const { email, password } = this.props;
     return (
       <FormWrapper>
         <Container>
           <Form
             onSubmit={this.handleSubmit}
-            initialValues={{ name, email }}
+            initialValues={{ email, password }}
             render={({
               handleSubmit,
               reset,
@@ -41,17 +41,6 @@ class AccountForm extends Component {
             }) => (
               <form onSubmit={handleSubmit}>
                 <Field
-                  name="name"
-                >
-                  {({ input, meta }) => (
-                    <div>
-                      <label>Full Name</label>
-                      <input {...input} type="text" />
-                      {meta.error && meta.touched && <span>{meta.error}</span>}
-                    </div>
-                  )}
-                </Field>
-                <Field
                   name="email"
                   validate={composeValidators(isValidEmail)}
                 >
@@ -59,6 +48,17 @@ class AccountForm extends Component {
                     <div>
                       <label>Email</label>
                       <input {...input} type="email" />
+                      {meta.error && meta.touched && <span>{meta.error}</span>}
+                    </div>
+                  )}
+                </Field>
+                <Field
+                  name="password"
+                >
+                  {({ input, meta }) => (
+                    <div>
+                      <label>Password</label>
+                      <input {...input} type="password" />
                       {meta.error && meta.touched && <span>{meta.error}</span>}
                     </div>
                   )}
